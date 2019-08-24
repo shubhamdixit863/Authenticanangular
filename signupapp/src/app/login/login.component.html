@@ -1,0 +1,47 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+      <flash-messages></flash-messages> 
+      <mat-card>
+  
+  
+          <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <p>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Username" formControlName="username">
+            </mat-form-field>
+          </p>
+        
+          <p>
+            <mat-form-field>
+              <input type="password" matInput placeholder="Password" formControlName="password">
+            </mat-form-field>
+          </p>
+        
+          <p *ngIf="error" class="error">
+            {{ error }}
+          </p>
+        
+          <div class="button">
+            <button type="submit" mat-button>Login</button>
+          </div>
+          <div class="button">
+           <a routerLink="signup">Signup</a>
+          </div>
+        
+        </form>
+        </mat-card-content>
+        </mat-card>
+  </body>
+</html>
+
+
+   
+
+
