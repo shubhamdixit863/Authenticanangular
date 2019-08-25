@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from  "@angular/common/http";
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +20,7 @@ export class SharedService {
 
 register(username:string,password:string,name:string,email:string)
 {
- return this.http.post("http://localhost:3900/signup",{username:username,password:password,name:name,email:email});
+ return this.http.post(`http://${environment.url}:${environment.port}/signup`,{username:username,password:password,name:name,email:email});
 
 }
 
@@ -27,14 +28,14 @@ register(username:string,password:string,name:string,email:string)
 deleteuser(username:string)
 {
   console.log(username);
-  return this.http.post("http://localhost:3900/userdelete",{username:username}); 
+  return this.http.post(`http://${environment.url}:${environment.port}/userdelete`,{username:username}); 
 }
 
 
 
 login (username:string,password:string)
 {
-  return this.http.post("http://localhost:3900/login",{username:username,password:password});
+  return this.http.post(`http://${environment.url}:${environment.port}/login`,{username:username,password:password});
 }
 
 logout()
@@ -44,7 +45,7 @@ logout()
 }
 getAllregistered()
 {
-  return this.http.post("http://localhost:3900/getAll",{});
+  return this.http.post(`http://${environment.url}:${environment.port}/getAll`,{});
 }
 
 
