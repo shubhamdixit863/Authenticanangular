@@ -24,7 +24,8 @@ router.post('/signup', function(req, res, next) {
   
 async function checkuser()
 {
-  let usercheck=User.findOne({username:username})
+  let usercheck=await User.findOne({username:username})
+  console.log("Checking user",usercheck);
   if(usercheck)
   {
     res.json({"message":"Username Already Exists"});
@@ -42,7 +43,7 @@ async function checkuser()
     user.save((err,event)=>{
       if (err) return console.error(err);
       console.log(event._id + " saved to user  collection.");
-      res.json({"message":"User Saved"});
+      res.json({"message":"User  Registered Please Login With Your Credentials"});
     })
   }
 }
