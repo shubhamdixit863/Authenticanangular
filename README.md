@@ -38,11 +38,14 @@ $ ng serve // Default port is 4200
 For Backend...
 
 ```sh
-$ cd twitterapi
+$ cd authenticationangular
 $ cd backend
 $ npm install 
 $ nodemon ./bin/www // Make sure you have nodemon installed globally
 ```
+
+username:"admin"
+password:"admin"
 
 
 
