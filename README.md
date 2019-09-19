@@ -24,7 +24,7 @@ This app uses a number of open source projects to work properly:
 
 ### Installation
 
-This App requires [Node.js](https://nodejs.org/) v8+ to run.
+This App requires [Node.js](https://nodejs.org/) v10+ to run.
 
 Install the dependencies and devDependencies and start the server.
 For Frontend 
